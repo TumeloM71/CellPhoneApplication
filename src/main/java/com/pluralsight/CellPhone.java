@@ -10,10 +10,7 @@ package com.pluralsight;
 public class CellPhone {
 
         int serialNumber;
-        String model ;
-        String carrier ;
-        String phoneNumber;
-        String owner;
+        String model,carrier,phoneNumber,owner; ;
 
         public CellPhone(){
 
