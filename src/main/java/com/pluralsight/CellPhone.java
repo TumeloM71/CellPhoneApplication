@@ -1,3 +1,10 @@
+/*
+Add a dial() method to the CellPhone class that accepts a phone number
+parameter and displays the message "owner's phone is calling phone-parameter"
+Example
+cellPhone1.dial("855-555-2222");
+ */
+
 package com.pluralsight;
 
 public class CellPhone {
@@ -10,6 +17,9 @@ public class CellPhone {
 
         public CellPhone(){
 
+        }
+        public void dial(String phoneNumber){
+            System.out.printf("%s's phone is calling %s",this.owner,phoneNumber);
         }
 
         public int getSerialNumber(){
@@ -29,7 +39,8 @@ public class CellPhone {
         public String getCarrier(){
             return this.carrier;
         }
-        public void setCarrier(String carrier){
+
+        public void setCarrier(String carrier) {
             this.carrier = carrier;
         }
 

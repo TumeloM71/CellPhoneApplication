@@ -1,6 +1,6 @@
 package com.pluralsight;
 
-import java.lang.reflect.Field;
+import java.lang.ref.Cleaner;
 import java.util.Scanner;
 
 /*
@@ -41,10 +41,11 @@ Step 3
 Stage, commit and push your changes to GitHub.
 
  */
-public class CellPhoneApplication {
+public class CellPhoneService {
     public static void main(String[] args) {
         Scanner input  = new Scanner(System.in);
         CellPhone phone = new CellPhone();
+        CellPhone phone2 = new CellPhone();
 
         //Getting user input
         System.out.print("What is the serial number? ");
@@ -58,15 +59,37 @@ public class CellPhoneApplication {
         phone.setPhoneNumber(input.nextLine());
         System.out.print("Who is the owner of the phone? ");
         phone.setOwner(input.nextLine());
+        System.out.println()//Empty line to make spacing
 
+        ;
+        System.out.print("What is the serial number? ");
+        phone2.setSerialNumber(input.nextInt());
+        System.out.print("What model is the phone? ");
+        input.nextLine();
+        phone2.setModel(input.nextLine());
+        System.out.print("Who is the carrier? ");
+        phone2.setCarrier(input.nextLine());
+        System.out.print("What is the phone number? ");
+        phone2.setPhoneNumber(input.nextLine());
+        System.out.print("Who is the owner of the phone? ");
+        phone2.setOwner(input.nextLine());
         System.out.println();//Empty line to make spacing
 
         //Printing instance variables to screen
+        display(phone);
+
+        display(phone2);
+
+        phone.dial(phone2.getPhoneNumber());
+    }
+
+    public static void display (CellPhone phone){
         System.out.println("Serial number: "+phone.getSerialNumber());
         System.out.println("Model: "+phone.getModel());
         System.out.println("Carrier: "+phone.getCarrier());
         System.out.println("Phone Number: "+phone.getPhoneNumber());
         System.out.println("Owner: "+phone.getOwner());
+        System.out.println(); //Empty line to make spacing
 
     }
 }
