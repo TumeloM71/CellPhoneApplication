@@ -77,9 +77,9 @@ public class CellPhoneService {
 
         //Printing instance variables to screen
         display(phone);
-
         display(phone2);
 
+        //Dial method
         phone.dial(phone2.getPhoneNumber());
     }
 

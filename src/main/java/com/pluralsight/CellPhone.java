@@ -19,7 +19,7 @@ public class CellPhone {
 
         }
         public void dial(String phoneNumber){
-            System.out.printf("%s's phone is calling %s",this.owner,phoneNumber);
+            System.out.println(this.owner+"'s"+ " phone is calling "+phoneNumber);
         }
 
         public int getSerialNumber(){
